@@ -1,0 +1,241 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:CC-{YYYY}-{#####}",
+ "creation": "2026-05-11 09:37:26.546581",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "clearance_section",
+  "shipment",
+  "vehicle",
+  "vehicle_description",
+  "column_break_cl",
+  "clearing_agent",
+  "entry_date",
+  "clearance_date",
+  "status",
+  "ref_section",
+  "bill_of_entry",
+  "tansad_number",
+  "column_break_ref",
+  "release_order_no",
+  "release_date",
+  "costs_section",
+  "customs_duty",
+  "excise_duty",
+  "import_vat",
+  "column_break_costs",
+  "port_charges",
+  "clearing_agent_fee",
+  "transport_to_yard",
+  "other_charges",
+  "total_section",
+  "total_clearance_cost",
+  "docs_section",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "clearance_section",
+   "fieldtype": "Section Break",
+   "label": "Clearance Details"
+  },
+  {
+   "fieldname": "shipment",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Shipment",
+   "options": "Shipment Tracking"
+  },
+  {
+   "fieldname": "vehicle",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Vehicle",
+   "options": "Vehicle",
+   "reqd": 1
+  },
+  {
+   "fieldname": "vehicle_description",
+   "fieldtype": "Data",
+   "label": "Vehicle Description",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_cl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "clearing_agent",
+   "fieldtype": "Data",
+   "label": "Clearing Agent"
+  },
+  {
+   "default": "Today",
+   "fieldname": "entry_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Entry Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "clearance_date",
+   "fieldtype": "Date",
+   "label": "Clearance Date"
+  },
+  {
+   "default": "Pending",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "Pending\nDocuments Submitted\nAssessment\nDuty Paid\nCleared\nReleased",
+   "reqd": 1
+  },
+  {
+   "fieldname": "ref_section",
+   "fieldtype": "Section Break",
+   "label": "Reference Numbers"
+  },
+  {
+   "fieldname": "bill_of_entry",
+   "fieldtype": "Data",
+   "label": "Bill of Entry No"
+  },
+  {
+   "fieldname": "tansad_number",
+   "fieldtype": "Data",
+   "label": "TANSAD Number"
+  },
+  {
+   "fieldname": "column_break_ref",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "release_order_no",
+   "fieldtype": "Data",
+   "label": "Release Order No"
+  },
+  {
+   "fieldname": "release_date",
+   "fieldtype": "Date",
+   "label": "Release Date"
+  },
+  {
+   "fieldname": "costs_section",
+   "fieldtype": "Section Break",
+   "label": "Costs Breakdown (TZS)"
+  },
+  {
+   "default": "0",
+   "fieldname": "customs_duty",
+   "fieldtype": "Currency",
+   "label": "Customs Duty"
+  },
+  {
+   "default": "0",
+   "fieldname": "excise_duty",
+   "fieldtype": "Currency",
+   "label": "Excise Duty"
+  },
+  {
+   "default": "0",
+   "fieldname": "import_vat",
+   "fieldtype": "Currency",
+   "label": "Import VAT (18%)"
+  },
+  {
+   "fieldname": "column_break_costs",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "port_charges",
+   "fieldtype": "Currency",
+   "label": "Port Charges"
+  },
+  {
+   "default": "0",
+   "fieldname": "clearing_agent_fee",
+   "fieldtype": "Currency",
+   "label": "Clearing Agent Fee"
+  },
+  {
+   "default": "0",
+   "fieldname": "transport_to_yard",
+   "fieldtype": "Currency",
+   "label": "Transport to Yard"
+  },
+  {
+   "default": "0",
+   "fieldname": "other_charges",
+   "fieldtype": "Currency",
+   "label": "Other Charges"
+  },
+  {
+   "fieldname": "total_section",
+   "fieldtype": "Section Break"
+  },
+  {
+   "bold": 1,
+   "fieldname": "total_clearance_cost",
+   "fieldtype": "Currency",
+   "label": "Total Clearance Cost",
+   "read_only": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "docs_section",
+   "fieldtype": "Section Break",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-05-11 09:37:26.546581",
+ "modified_by": "Administrator",
+ "module": "Vehicle Import",
+ "name": "Customs Clearance",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Purchase User",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "vehicle,status,clearing_agent",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

@@ -1,0 +1,355 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:VB-{YYYY}-{#####}",
+ "creation": "2026-05-11 09:37:26.995263",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "customer_section",
+  "customer",
+  "customer_name",
+  "booking_date",
+  "column_break_cust",
+  "order_type",
+  "status",
+  "kyc_verification",
+  "specs_section",
+  "make",
+  "model",
+  "year",
+  "column_break_specs",
+  "preferred_color",
+  "engine_type",
+  "transmission",
+  "additional_specs",
+  "pricing_section",
+  "estimated_cif",
+  "estimated_customs",
+  "estimated_other_charges",
+  "column_break_price",
+  "estimated_total_costs",
+  "selling_price",
+  "advance_percentage",
+  "advance_amount",
+  "links_section",
+  "vehicle",
+  "quotation",
+  "shipment_tracking",
+  "column_break_links",
+  "sales_order",
+  "purchase_order",
+  "customs_clearance",
+  "payments_section",
+  "payment_milestones",
+  "totals_section",
+  "total_paid",
+  "total_balance",
+  "column_break_totals",
+  "payment_progress",
+  "notes_section",
+  "notes",
+  "advance_type"
+ ],
+ "fields": [
+  {
+   "fieldname": "customer_section",
+   "fieldtype": "Section Break",
+   "label": "Customer"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Customer",
+   "options": "Customer",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "customer.customer_name",
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Customer Name",
+   "read_only": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "booking_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Booking Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_cust",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Import on Demand",
+   "fieldname": "order_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Order Type",
+   "options": "Import on Demand\nReady Stock",
+   "reqd": 1
+  },
+  {
+   "default": "Draft",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Importation Flow Status",
+   "options": "Draft\nPayment Confirmation\nVehicle Inspection\nShipment Schedule (Prospective)\nLoading Confirmation\nVessel Arrival Notice\nOffloading and Dryport then Arrival Confirmation\nDelivery\nCancelled",
+   "reqd": 1
+  },
+  {
+   "fieldname": "kyc_verification",
+   "fieldtype": "Link",
+   "label": "KYC Verification",
+   "options": "KYC Verification"
+  },
+  {
+   "fieldname": "specs_section",
+   "fieldtype": "Section Break",
+   "label": "Vehicle Specs"
+  },
+  {
+   "fetch_from": "vehicle.make",
+   "fieldname": "make",
+   "fieldtype": "Data",
+   "label": "Make",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "vehicle.model",
+   "fieldname": "model",
+   "fieldtype": "Data",
+   "label": "Model",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "vehicle.year",
+   "fieldname": "year",
+   "fieldtype": "Int",
+   "label": "Year",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_specs",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "vehicle.exterior_color",
+   "fieldname": "preferred_color",
+   "fieldtype": "Data",
+   "label": "Preferred Color"
+  },
+  {
+   "fetch_from": "vehicle.engine_type",
+   "fieldname": "engine_type",
+   "fieldtype": "Select",
+   "label": "Engine Type",
+   "options": "\nPetrol\nDiesel\nHybrid\nElectric"
+  },
+  {
+   "fetch_from": "vehicle.transmission",
+   "fieldname": "transmission",
+   "fieldtype": "Select",
+   "label": "Transmission",
+   "options": "\nAutomatic\nManual\nCVT"
+  },
+  {
+   "fieldname": "additional_specs",
+   "fieldtype": "Small Text",
+   "label": "Additional Specs"
+  },
+  {
+   "fieldname": "pricing_section",
+   "fieldtype": "Section Break",
+   "label": "Pricing / Costing"
+  },
+  {
+   "fetch_from": "vehicle.cif",
+   "fieldname": "estimated_cif",
+   "fieldtype": "Currency",
+   "label": "CIF"
+  },
+  {
+   "fetch_from": "vehicle.customs",
+   "fieldname": "estimated_customs",
+   "fieldtype": "Currency",
+   "label": "Customs"
+  },
+  {
+   "fetch_from": "vehicle.other_charges",
+   "fieldname": "estimated_other_charges",
+   "fieldtype": "Currency",
+   "label": "Other Charges"
+  },
+  {
+   "fieldname": "column_break_price",
+   "fieldtype": "Column Break"
+  },
+  {
+   "bold": 1,
+   "fieldname": "estimated_total_costs",
+   "fieldtype": "Currency",
+   "label": "Total Costs",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle.selling_price",
+   "fieldname": "selling_price",
+   "fieldtype": "Currency",
+   "label": "Selling Price",
+   "reqd": 1
+  },
+  {
+   "fieldname": "advance_percentage",
+   "fieldtype": "Percent",
+   "label": "Advance %",
+   "read_only": 1
+  },
+  {
+   "fieldname": "advance_amount",
+   "fieldtype": "Currency",
+   "label": "Advance Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "links_section",
+   "fieldtype": "Section Break",
+   "label": "Linked Documents"
+  },
+  {
+   "fieldname": "vehicle",
+   "fieldtype": "Link",
+   "label": "Vehicle",
+   "options": "Vehicle"
+  },
+  {
+   "fieldname": "quotation",
+   "fieldtype": "Link",
+   "label": "Quotation",
+   "options": "Quotation"
+  },
+  {
+   "fieldname": "shipment_tracking",
+   "fieldtype": "Link",
+   "label": "Shipment Tracking",
+   "options": "Shipment Tracking"
+  },
+  {
+   "fieldname": "column_break_links",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sales_order",
+   "fieldtype": "Link",
+   "label": "Sales Order",
+   "options": "Sales Order"
+  },
+  {
+   "fieldname": "purchase_order",
+   "fieldtype": "Link",
+   "label": "Purchase Order",
+   "options": "Purchase Order"
+  },
+  {
+   "fieldname": "customs_clearance",
+   "fieldtype": "Link",
+   "label": "Customs Clearance",
+   "options": "Customs Clearance"
+  },
+  {
+   "fieldname": "payments_section",
+   "fieldtype": "Section Break",
+   "label": "Payment Milestones"
+  },
+  {
+   "fieldname": "payment_milestones",
+   "fieldtype": "Table",
+   "label": "Payment Milestones",
+   "options": "Payment Milestone"
+  },
+  {
+   "fieldname": "totals_section",
+   "fieldtype": "Section Break",
+   "label": "Payment Summary"
+  },
+  {
+   "bold": 1,
+   "fieldname": "total_paid",
+   "fieldtype": "Currency",
+   "label": "Total Paid",
+   "read_only": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "total_balance",
+   "fieldtype": "Currency",
+   "label": "Balance Due",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_totals",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "payment_progress",
+   "fieldtype": "Percent",
+   "label": "Payment Progress",
+   "read_only": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "notes_section",
+   "fieldtype": "Section Break",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes"
+  },
+  {
+   "default": "CIF",
+   "fieldname": "advance_type",
+   "fieldtype": "Select",
+   "label": "Advance Type",
+   "options": "CIF\n50% of CIF",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-05-11 20:23:06.501103",
+ "modified_by": "Administrator",
+ "module": "Vehicle Import",
+ "name": "Vehicle Booking",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "customer_name,make,model,status",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "customer_name",
+ "track_changes": 1
+}

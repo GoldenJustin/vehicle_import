@@ -1,0 +1,296 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:VEH-{#####}",
+ "creation": "2026-05-11 14:42:05.783430",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "vehicle_details_section",
+  "make",
+  "model",
+  "year",
+  "vehicle_title",
+  "column_break_1",
+  "vin",
+  "engine_number",
+  "image",
+  "specifications_section",
+  "engine_type",
+  "engine_cc",
+  "transmission",
+  "column_break_2",
+  "exterior_color",
+  "interior_color",
+  "fuel_type",
+  "status_section",
+  "status",
+  "warehouse",
+  "costing_section",
+  "cif",
+  "customs",
+  "other_charges",
+  "column_break_3",
+  "total_costs",
+  "selling_price",
+  "profit_margin",
+  "links_section",
+  "item_code",
+  "customer",
+  "column_break_4",
+  "supplier",
+  "purchase_order",
+  "sales_order",
+  "notes_section",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "vehicle_details_section",
+   "fieldtype": "Section Break",
+   "label": "Vehicle Details"
+  },
+  {
+   "bold": 1,
+   "fieldname": "make",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Make",
+   "reqd": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "model",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Model",
+   "reqd": 1
+  },
+  {
+   "fieldname": "year",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Year",
+   "reqd": 1
+  },
+  {
+   "fieldname": "vehicle_title",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Vehicle Title",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "bold": 1,
+   "fieldname": "vin",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "VIN / Chassis No",
+   "unique": 1
+  },
+  {
+   "fieldname": "engine_number",
+   "fieldtype": "Data",
+   "label": "Engine Number"
+  },
+  {
+   "fieldname": "image",
+   "fieldtype": "Attach Image",
+   "label": "Vehicle Image"
+  },
+  {
+   "fieldname": "specifications_section",
+   "fieldtype": "Section Break",
+   "label": "Specifications"
+  },
+  {
+   "fieldname": "engine_type",
+   "fieldtype": "Select",
+   "label": "Engine Type",
+   "options": "\nPetrol\nDiesel\nHybrid\nElectric"
+  },
+  {
+   "fieldname": "engine_cc",
+   "fieldtype": "Int",
+   "label": "Engine CC"
+  },
+  {
+   "fieldname": "transmission",
+   "fieldtype": "Select",
+   "label": "Transmission",
+   "options": "\nAutomatic\nManual\nCVT"
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "exterior_color",
+   "fieldtype": "Data",
+   "label": "Exterior Color"
+  },
+  {
+   "fieldname": "interior_color",
+   "fieldtype": "Data",
+   "label": "Interior Color"
+  },
+  {
+   "fieldname": "fuel_type",
+   "fieldtype": "Select",
+   "label": "Fuel Type",
+   "options": "\nPetrol\nDiesel\nElectric\nHybrid\nLPG"
+  },
+  {
+   "fieldname": "status_section",
+   "fieldtype": "Section Break",
+   "label": "Status"
+  },
+  {
+   "default": "Ordered",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Ordered\nIn Transit\nAt Port\nAt Customs\nIn Stock\nReserved\nSold\nDelivered",
+   "reqd": 1
+  },
+  {
+   "fieldname": "warehouse",
+   "fieldtype": "Link",
+   "label": "Current Warehouse",
+   "options": "Warehouse"
+  },
+  {
+   "fieldname": "costing_section",
+   "fieldtype": "Section Break",
+   "label": "Costing"
+  },
+  {
+   "fieldname": "cif",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "CIF"
+  },
+  {
+   "fieldname": "customs",
+   "fieldtype": "Currency",
+   "label": "Customs"
+  },
+  {
+   "fieldname": "other_charges",
+   "fieldtype": "Currency",
+   "label": "Other Charges"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "bold": 1,
+   "fieldname": "total_costs",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total Costs",
+   "read_only": 1
+  },
+  {
+   "fieldname": "selling_price",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Selling Price"
+  },
+  {
+   "bold": 1,
+   "fieldname": "profit_margin",
+   "fieldtype": "Currency",
+   "label": "Profit Margin",
+   "read_only": 1
+  },
+  {
+   "fieldname": "links_section",
+   "fieldtype": "Section Break",
+   "label": "Linked Documents"
+  },
+  {
+   "fieldname": "item_code",
+   "fieldtype": "Link",
+   "label": "Item Code",
+   "options": "Item",
+   "read_only": 1
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "supplier",
+   "fieldtype": "Link",
+   "label": "Supplier",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "purchase_order",
+   "fieldtype": "Link",
+   "label": "Purchase Order",
+   "options": "Purchase Order"
+  },
+  {
+   "fieldname": "sales_order",
+   "fieldtype": "Link",
+   "label": "Sales Order",
+   "options": "Sales Order"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "notes_section",
+   "fieldtype": "Section Break",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes"
+  }
+ ],
+ "image_field": "image",
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-05-11 14:42:05.783430",
+ "modified_by": "Administrator",
+ "module": "Vehicle Import",
+ "name": "Vehicle",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "make,model,vin,year",
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "vehicle_title",
+ "track_changes": 1
+}

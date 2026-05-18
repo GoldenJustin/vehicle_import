@@ -1,0 +1,74 @@
+<div class="print-format">
+    <div class="header" style="text-align: center; border-bottom: 2px solid #333; padding-bottom: 20px; margin-bottom: 30px;">
+        <h2>ROYAL LOGISTICS</h2>
+        <p>Vehicle Import & Sales</p>
+        <p>P.O. Box 12345, Dar es Salaam, Tanzania</p>
+        <p>Tel: +255 XXX XXX XXX | Email: info@royallogistics.co.tz</p>
+    </div>
+
+    <h3 style="text-align: center; background-color: #f0f0f0; padding: 10px;">VEHICLE BOOKING INVOICE</h3>
+
+    <table style="width: 100%; margin-bottom: 20px;">
+        <tr>
+            <td style="width: 50%;">
+                <strong>Customer:</strong><br>
+                {{ doc.customer_name }}<br>
+            </td>
+            <td style="width: 50%; text-align: right;">
+                <strong>Booking No:</strong> {{ doc.name }}<br>
+                <strong>Date:</strong> {{ frappe.utils.formatdate(doc.booking_date) }}<br>
+                <strong>Status:</strong> {{ doc.status }}
+            </td>
+        </tr>
+    </table>
+
+    <h4>Vehicle Details</h4>
+    <table class="table table-bordered">
+        <tr>
+            <th>Year</th>
+            <th>Make</th>
+            <th>Model</th>
+            <th>Color</th>
+            <th>Transmission</th>
+        </tr>
+        <tr>
+            <td>{{ doc.year }}</td>
+            <td>{{ doc.make }}</td>
+            <td>{{ doc.model }}</td>
+            <td>{{ doc.preferred_color or "-" }}</td>
+            <td>{{ doc.transmission or "-" }}</td>
+        </tr>
+    </table>
+
+    <h4>Payment Details</h4>
+    <table class="table table-bordered">
+        <tr>
+            <td><strong>Selling Price:</strong></td>
+            <td style="text-align: right;">{{ frappe.utils.fmt_money(doc.selling_price) }}</td>
+        </tr>
+        <tr>
+            <td><strong>Advance Payment ({{ doc.advance_percentage }}%):</strong></td>
+            <td style="text-align: right;">{{ frappe.utils.fmt_money(doc.advance_amount) }}</td>
+        </tr>
+        <tr>
+            <td><strong>Total Paid:</strong></td>
+            <td style="text-align: right;">{{ frappe.utils.fmt_money(doc.total_paid) }}</td>
+        </tr>
+        <tr style="background-color: #f9f9f9;">
+            <td><strong>Balance Due:</strong></td>
+            <td style="text-align: right; font-size: 16px;"><strong>{{ frappe.utils.fmt_money(doc.total_balance) }}</strong></td>
+        </tr>
+    </table>
+
+    <div style="margin-top: 50px; border-top: 1px solid #ccc; padding-top: 20px;">
+        <p><strong>Bank Details:</strong></p>
+        <p>Bank: CRDB Bank<br>
+        Account Name: Royal Logistics Ltd<br>
+        Account Number: XXXXXXXXXX<br>
+        Swift Code: CORUTZTZ</p>
+    </div>
+
+    <div style="text-align: center; margin-top: 30px; font-size: 12px; color: #666;">
+        <p>Thank you for your business!</p>
+    </div>
+</div>
