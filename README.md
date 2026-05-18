@@ -56,7 +56,7 @@ Automatic journal entries for:
 ```bash
 # 1. Get the app
 cd ~/frappe-bench
-bench get-app https://github.com/YOUR_USERNAME/vehicle_import.git
+bench get-app https://github.com/GoldenJustin/vehicle_import.git
 
 # 2. Install on site
 bench --site YOUR_SITE install-app vehicle_import
